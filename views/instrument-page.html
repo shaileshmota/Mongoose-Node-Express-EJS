@@ -1,0 +1,23 @@
+
+<%- include header.html %>
+
+    <h2><%= title %></h2>
+    <h4>User : <%= name %></h4>
+    <h4>Email : <%= email%></h4>
+    <h3>Available Instruments</h3>
+    <ul id="myinstruments">
+      <li>loading...</li>
+    </ul>
+    
+    <h3>Actions</h3>
+    <ul>
+      <li><a href="/instrument/new">Register New Instrument</a></li>
+  
+    </ul>
+    
+    <script type="text/javascript"> var userID = "<%= userID %>"; </script>
+    <script type="text/javascript" src="/javascripts/getInstList.js"></script>
+
+<%- include back-to-userprofile.html %>
+<%- include footer.html %>
+

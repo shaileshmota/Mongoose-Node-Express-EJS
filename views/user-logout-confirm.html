@@ -1,0 +1,24 @@
+
+<%- include header.html %>
+
+<h3><%= title %></h3>
+
+<strong><%= name %></strong>, are you sure you want to log out now? <br/>
+
+<!--User Name : <%= name %><br/>-->
+Email : <%= email %><br/>
+
+    <br/>
+     <form  method="post" action="/logout">
+  
+      	<!-- use this for server to do the redirect, no JS in html-->
+ 	<input type="hidden" name="route" value="<%= route %>" />
+	<input type="submit" name="actionID" value ="Yes, please!" />
+	<input type="submit" name="actionID" value="Cancel" />
+
+        <!--<input type="button" onClick=" window.location='/logout';" name="actionID" value="Yes, please!" />-->
+        <!--<input type="button" onClick=" window.location='/user';" name="actionID" value="Cancel" />-->
+      </form>
+    <br/>
+        
+<%- include footer.html %>

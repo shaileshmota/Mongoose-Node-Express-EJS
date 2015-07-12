@@ -1,0 +1,21 @@
+
+<%- include header.html %>
+
+ <h3><%= title %></h3>
+
+    Are you sure you want to remove the instrument below?<br/>
+    <strong><%= instrName %></strong><br/>
+    Serial No : <%= instrSN %><br/>
+    Location : <%= instrLocation %><br/><br/>
+
+    <form id="formInstrumentDelete" method="post" action="">
+ 
+	<input type="hidden" name="instrID" id="instrID" value="<%= instrID %>" />
+	<input type="hidden" name="userid" id="userid" value="<%= userID %>" />
+	<input type="submit" value="Yes, please delete it!" />
+
+        <input type="button" onClick="window.location='/instrument/renderform';" name="cancel" value="cancel" />
+     </form>
+   
+<%- include footer.html %>
+  

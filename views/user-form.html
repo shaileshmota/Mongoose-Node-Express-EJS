@@ -1,0 +1,45 @@
+
+<%- include header.html %>
+
+<h3><%= title %></h3>
+
+<!-- js code in html -->
+<% if (errors.length > 0) %> 
+<ul class="errors">
+<% for(var i=0; i<errors.length; i++) { %>
+   <li><%= errors[i] %></li>
+<% } %>
+</ul>
+
+     <br/>
+    <!--<h4> Enter your name and email address to become a member.</h4>-->
+    <!--<form id="formUserProfile" method="post" action="" >-->
+
+    <!-- form name is not sent to server, form id is for CSS use only -->
+    <form name="newUser" id="newUser" autocomplete="off" method="post" action="/user/new" ><!-- same as above -->
+ 
+
+
+	<div>
+		<label>Full Name </label>
+		<input autofocus type="text" name="FullName" id="FullName" value="<%= name %>" />
+	     	</div>
+	      	<div>
+		<label>Add Email </label>
+		<input type="email" name="Email" id="Email" value="<%= email %>" />
+		</div>
+		<br/>
+		<div>
+
+
+		<input type="submit" value="<%= buttonText %>" />
+		<input type="button" name="cancel" value="cancel"  onClick=" window.location='/user';" />
+
+	  
+		
+      </div>
+    </form>
+
+<%- include back-to-userprofile.html %>
+<%- include footer.html %>
+

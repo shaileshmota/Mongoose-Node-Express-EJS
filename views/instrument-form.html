@@ -1,0 +1,37 @@
+
+<%- include header.html %>
+
+<% if(!OpStatus) { var OpStatus ="";} %>
+
+<h3><%= title %></h3>
+
+    <h4>User Name : <%= userName %></h4><br/>
+    <h4><%= OpStatus %></h4><br/>
+    <form id="frmInstrument" method="post" action="">
+    
+      <input type="hidden" name="userid" id="userid" value="<%= userid %>">
+      <input type="hidden" name="instrID" id="instrID" value="<%= instrID %>">
+      <label for="instrName">Instrument Name:</label>
+      <input type="text" name="instrName" id="instrName" value="<%= instrName %>" style=" position: absolute; right: 940px" ><br/>
+
+      <label for="instrType">Type:</label>
+      <input type="text"  <%= statusID %> name="instrType" id="instrType" value="<%= instrType %>"  style=" position: absolute; right: 940px" ><br/>
+      <label for="instrSN" >Serial No:</label>
+      <input type="text" <%= statusID %>  name="instrSN" id="instrSN" value="<%= instrSN %>" style=" position: absolute; right: 940px" ><br/>
+      <label for="instrCalDate">Calibration Date:</label>
+
+      <input type="text"  <%= statusID %> name="instrCalDate" id="instrCalDate" value="<%= instrCalDate %>" style=" position: absolute; right: 940px" ><br/>
+      <label for="instrLocation">Location:</label>
+      <input type="text" name="instrLocation" id="instrLocation" value="<%= instrLocation %>" style=" position: absolute; right: 940px"><br/>
+      <label for="instrDesc">Description:</label>
+      <input type="text" name="instrDesc" id="instrDesc" value="<%= instrDesc %>" style=" position: absolute; right: 940px" ><br/>
+      <br/><br/>
+      <input type="submit" <%= btnID %> name="route" value="<%= buttonText %>" >
+      <input type="button" onClick="window.location='/instrument/info';" name="actionID" value="cancel" />
+    
+     </form><br/><br/>
+  
+  <li><a href="/instrument/edit/<%= instrID %>">Edit Instrument info</a></li>
+  <li><a href="/instrument/delete/<%= instrID %>" >Delete Instrument Entry from Database</a></li>
+  <li><a href="/instrument/info">Back To Instrument Inventory Page</a> </li> 
+<%- include footer.html %>
