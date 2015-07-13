@@ -5,6 +5,14 @@
 
 <h3><%= title %></h3>
 
+
+<% if (errors.length > 0) %> 
+<ul class="errors">
+<% for(var i=0; i<errors.length; i++) { %>
+   <li><%= errors[i] %></li>
+<% } %>
+</ul>
+
     <h4>User Name : <%= userName %></h4><br/>
     <h4><%= OpStatus %></h4><br/>
     <form id="frmInstrument" method="post" action="">
@@ -34,4 +42,5 @@
   <li><a href="/instrument/edit/<%= instrID %>">Edit Instrument info</a></li>
   <li><a href="/instrument/delete/<%= instrID %>" >Delete Instrument Entry from Database</a></li>
   <li><a href="/instrument/info">Back To Instrument Inventory Page</a> </li> 
+
 <%- include footer.html %>
