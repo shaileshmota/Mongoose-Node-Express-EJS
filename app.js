@@ -9,7 +9,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var path = require('path');
 
-
 var db = require('./model/db');  
 var app = express();
 
@@ -32,15 +31,15 @@ var MongoStore = require('connect-mongo')(session);
 
 app.use(session({
     secret: 'cat in the hat',
-    saveUninitialized: false, //don't create session until something stored 
-    resave: false, //don't save session if unmodified
+    saveUninitialized: false, 
+    resave: false, 
     store: new MongoStore({
 	db: 'Mongosession',
-	touchAfter: 24 * 3600 //time period in seconds 
+	touchAfter: 24 * 3600 
  	})
 }));
 
-//routes setup
+//route setup
 var route = require('./routes/routes.js').routeHandler(app);
 
 //catch 404 and forward to error handler
@@ -50,8 +49,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-//dev error handler
-//will print stacktrace
+//development error handler
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
@@ -63,7 +61,6 @@ if (app.get('env') === 'development') {
 }
 
 //production error handler
-//no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
@@ -74,8 +71,8 @@ app.use(function(err, req, res, next) {
 
 app.set('port', process.env.PORT || 3000);
 
-var server = http.createServer(app).listen(app.get('port'), function(){ //for debug only
-console.log('HTTPS server listening on port ' + app.get('port'));
+var server = http.createServer(app).listen(app.get('port'), function(){ 
+console.log('HTTP server listening on port ' + app.get('port'));
 });
 
 
