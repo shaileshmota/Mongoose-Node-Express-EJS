@@ -53,7 +53,6 @@ app.use(function(req, res, next) {
 //dev error handler
 //will print stacktrace
 if (app.get('env') === 'development') {
-  //app.locals.pretty = true; // pretty html ok 4/34/2015
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
