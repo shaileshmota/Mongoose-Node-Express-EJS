@@ -15,7 +15,7 @@
 
     <h4>User Name : <%= userName %></h4><br/>
     <h4><%= OpStatus %></h4><br/>
-    <form id="frmInstrument" method="post" action="">
+    <!--<form id="frmInstrument" method="post" action="">-->
     
       <input type="hidden" name="userid" id="userid" value="<%= userid %>">
       <input type="hidden" name="instrID" id="instrID" value="<%= instrID %>">
@@ -32,12 +32,12 @@
       <label for="instrLocation">Location:</label>
       <input type="text" name="instrLocation" id="instrLocation" value="<%= instrLocation %>" style=" position: relative; left: 75px"><br/>
       <label for="instrDesc">Description:</label>
-      <input type="text" name="instrDesc" id="instrDesc" value="<%= instrDesc %>" style=" position: relative; left: 57px" ><br/>
+      <input type="text" name="instrDesc" id="instrDesc" value="<%= instrDesc %>" style=" position: relative; left: 57px" >
       <br/><br/>
-      <input type="submit" name="<%- btnID %>" name="route" value="<%= buttonText %>" />
-      <input type="button" onClick="window.location='/instrument/info';" name="actionID" value="cancel" />
+      <!--<input type="submit" name="<%= btnID %>" name="route" value="<%= buttonText %>" />-->
+      <input type="button" onClick="window.location='/instrument/info';" name="actionID" value="exit" />
    
-     </form><br/><br/>
+     <!--</form>--><br/><br/>
   
   <li><a href="/instrument/edit/<%= instrID %>">Edit Instrument info</a></li>
   <li><a href="/instrument/delete/<%= instrID %>" >Delete Instrument Entry from Database</a></li>
