@@ -1,7 +1,7 @@
 # Mongoose-Node-Express-EJS
 A NodeJS app for inventory management.
 
-This is a simple app that can be used to manage an inventory of items.
+A simple app that can be used to manage an inventory of items.
 
 Using mongoose driver we can create schema providing data structure to our collection.
 
