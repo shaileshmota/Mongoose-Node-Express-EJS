@@ -1,5 +1,4 @@
 # Mongoose-Node-Express-EJS
-A nodejs app for inventory management.
 
 A simple app that can be used to manage an inventory of items.
 
